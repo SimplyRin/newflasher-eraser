@@ -21,7 +21,7 @@ namespace newflasher {
 
             Console.WriteLine("Removing *.ta and userdata*.sin\n");
 
-            String[] files = Directory.GetFiles(".", "*", System.IO.SearchOption.AllDirectories);
+            String[] files = Directory.GetFiles(".", "*", SearchOption.AllDirectories);
             foreach (String name in files) {
                 String file = name.ToLower();
                 if (file.StartsWith(".\\") || file.StartsWith("./")) {
