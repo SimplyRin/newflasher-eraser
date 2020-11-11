@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Xml.Linq;
@@ -20,7 +20,9 @@ namespace newflasher {
             }
 
             Console.WriteLine("Removing *.ta and userdata*.sin\n");
-            foreach (String name in Directory.GetFiles(".", "*")) {
+
+            String[] files = Directory.GetFiles(".", "*", System.IO.SearchOption.AllDirectories);
+            foreach (String name in files) {
                 String file = name.ToLower();
                 if (file.StartsWith(".\\") || file.StartsWith("./")) {
                     file = file.Substring(2);
